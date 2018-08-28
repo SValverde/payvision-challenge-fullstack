@@ -8,7 +8,7 @@ Clone or dowload the repository
 
 Install [node](https://nodejs.org/)
 
-Run `npm install` in the proyects root folder
+Run `npm install` in the proyect root folder
 
 Run `ng serve` for a dev server.
 
