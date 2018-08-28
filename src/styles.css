@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: SourceSansPro;
+    src: url(./assets/fonts/SourceSansPro-Regular.otf);
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url(./assets/fonts/SourceSansPro-Semibold.otf);
+    font-weight: bold;
+}
+
+* {
+    font-family: SourceSansPro;
+}

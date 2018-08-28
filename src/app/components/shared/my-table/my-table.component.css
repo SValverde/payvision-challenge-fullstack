@@ -1,0 +1,42 @@
+*{
+    font-family: SourceSansPro;
+}
+
+th{
+    font-weight: bold;
+    color: #213d8f;
+    font-size: 14px;
+}
+
+tr{
+    font-size: 14px;
+}
+
+.table thead th {
+    border-bottom : 1px solid #dee2e6;
+}
+
+.table td, .table th {    
+    padding: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.selectedRow *{
+    font-weight: bold;
+}
+
+.hiddenDetailsTitle{
+    color: #213d8f;
+    font-size: 16px;
+}
+
+.hiddenDetails{
+    font-size: 16px;
+}
+
+.hiddenDetailsRow{
+    flex:1; display:flex; padding: 10px 0px;
+}

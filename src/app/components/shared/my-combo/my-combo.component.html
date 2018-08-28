@@ -1,0 +1,57 @@
+<div [ngClass]="{'openDropdown' : showOptions, 'closedDropdown' : !showOptions}" class="outerContainer">
+  
+  <!-- Hack aroud to keep the same width in the display label and the dropdown menu  part 1-->
+  <div style="height:0px; overflow: hidden; padding-top:0px; padding-bottom: 0px; font-weight: bold;"
+    (click)="showOptions=!showOptions" class="option" >
+    {{placeholder}}
+    <img class="selectArrow" style="visibility: hidden;" src="../../../../assets/expand-button.png" >
+  </div>
+  <div style="height:0px; overflow: hidden; padding-top:0px; padding-bottom: 0px; font-weight: bold;" 
+    *ngFor="let option of options">
+    {{option.label}}
+    <img class="selectArrow" style="visibility: hidden;" src="../../../../assets/expand-button.png" >
+  </div>
+
+  <div [ngStyle]="{'border-bottom' : showOptions ? '1px solid #e8ebf3': '0px'}" 
+    style="font-weight: bold"
+    (click)="showOptions=!showOptions" class="option">
+    {{selectedOption.label}}
+    <img *ngIf="!showOptions" class="selectArrow" src="../../../../assets/expand-button.png" >
+    <img *ngIf="showOptions" class="selectArrow" src="../../../../assets/expand-arrow.png" >
+  </div>
+
+  
+  <div *ngIf="showOptions" class="optionsContainer"
+    [ngStyle]="{'border-color': showOptions ? '#1db9de' : '#909ec7',
+    'border-top-left-radius': showOptions ? '0px' : '2px',
+    'border-top-right-radius': showOptions ? '0px' : '2px'}">
+
+    <!-- Hack aroud to keep the same width in the display label and the dropdown menu  part 2-->
+    <div style="height:0px; overflow: hidden; padding-top:0px; padding-bottom: 0px; font-weight: bold;"
+      (click)="showOptions=!showOptions" class="option" >
+      {{placeholder}}
+      <img class="selectArrow" style="visibility: hidden;" src="../../../../assets/expand-button.png" >
+    </div>
+    <div style="height:0px; overflow: hidden; padding-top:0px; padding-bottom: 0px; font-weight: bold;" 
+      *ngFor="let option of options">
+      {{option.label}}
+      <img class="selectArrow" style="visibility: hidden;" src="../../../../assets/expand-button.png" >
+    </div>
+
+
+    <div [ngStyle]="{height: selectedOption.value=='' ? '0px' : 'auto',
+     'padding-top': selectedOption.value!=='' ? '8px' : '0px',
+     'padding-bottom': selectedOption.value!=='' ? '8px' : '0px'}"
+      class="option option_hover"
+      (click)="setValue({label: placeholder, value:''})" >
+      {{placeholder}}
+      <img class="selectArrow" style="visibility: hidden;" src="../../../../assets/expand-button.png" >
+    </div>
+    <div [ngStyle]="{height: selectedOption.value==option.value ? '0px' : 'auto',
+    'padding-top': selectedOption.value!==option.value ? '8px' : '0px',
+    'padding-bottom': selectedOption.value!==option.value ? '8px' : '0px'}" class="option option_hover" (click)="setValue(option)" *ngFor="let option of options">
+      {{option.label}}
+      <img class="selectArrow" style="visibility: hidden;" src="../../../../assets/expand-button.png" >
+    </div>
+  </div>
+</div>
